@@ -1,9 +1,9 @@
 require 'sinatra'
 require_relative 'contact'
 #
-# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
-# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
+Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   @crm_app_name = "Matt's CRM"
@@ -11,6 +11,7 @@ get '/' do
 end
 
 get '/contacts' do
+  @number = Contact.all.count
   erb :contacts
 end
 #/contacts/new_contact

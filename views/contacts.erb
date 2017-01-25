@@ -1,7 +1,8 @@
-<h1>All Contacts</h1>%>
+<h1 class= contacttitle>There are <%= @number %> contacts</h1>
+
 
 <ul>
-  <% contact.all.each do |contact| %>
-      <li><%= contact.first_name %> <%= contact.last_name %> </li>
+  <% Contact.all.each do |contact| %>
+      <li class= contactlist><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>) <br> <a href="#"> Edit</a> | <a href="#">Delete</a> </li>
 <% end %>
 </ul>

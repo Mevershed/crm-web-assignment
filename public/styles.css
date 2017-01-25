@@ -1,0 +1,39 @@
+
+
+nav {
+    background-color: grey;
+    text-align: center;
+    color: white;
+    /* padding: 5px; */
+    margin: 5px 10px;
+}
+
+ul.directory {margin: 5px;list-style-type: none;}
+
+li {
+    padding: 2px;
+    margin: 10px 5px;
+}
+.welcome {
+  background-color: #36454F;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  padding: 40px;
+  margin: 0px;}
+
+.contactlist {
+  margin: 5px 10px;
+  list-style-type: none;
+  background-color: turquoise;
+  padding: 15px;
+  font-size: 24px;
+}
+
+.contacttitle{
+  background-color: red;
+  margin: 5px 10px;
+}
+ @number{
+   border-bottom: solid 2px turquoise;
+ }
