@@ -18,7 +18,12 @@ get '/contacts/new_contact' do
 end
 
 post '/contacts' do
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  contact = Contact.create(
+  first_name: params[:first_name],
+  last_name: params[:last_name],
+  email: params[:email],
+  note: params[:note]
+  )
   redirect to('/contacts')
 end
 
@@ -43,10 +48,13 @@ end
 put '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
-    @contact.first_name = params[:first_name]
-    @contact.last_name = params[:last_name]
-    @contact.email = params[:email]
-    contact.note = params[:note]
+    @contact = Contact.update(
+    @contact.id,
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    email: params[:email],
+    note: params[:note]
+    )
 
     redirect to('/contacts')
   else
@@ -63,3 +71,11 @@ delete '/contacts/:id' do
     raise Sinatra::NotFound
   end
 end
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
+# delete '/contacts/:id' do
+#   "DELETE request: #{params}"
+# end
